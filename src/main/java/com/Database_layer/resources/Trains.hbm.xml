@@ -6,10 +6,9 @@
     <class name="com.Database_layer.Trains" table="trains">
 
         <id name="trainId" type="java.lang.Integer">
-            <column name="name=id_train" />
+            <column name="id_train" />
             <generator class="identity" />
         </id>
-
         <property name="trainNumber" type="java.lang.Integer">
             <column name="train_number" not-null="true" unique="true" />
         </property>
