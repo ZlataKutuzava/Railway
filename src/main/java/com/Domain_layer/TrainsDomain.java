@@ -15,8 +15,7 @@ public class TrainsDomain {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from Trains");
-            trainsList = query.list();
+            trainsList = session.createQuery("from Train ").list();
         }catch (HibernateException e){
             e.printStackTrace();
         }finally {
@@ -40,7 +39,7 @@ public class TrainsDomain {
         return train;
     }
 
-    public Integer CreateTrain(int trainId,int trainNumber, String trainType){
+    public Integer CreateTrain(int trainNumber, String trainType){
         Session session = null;
         Transaction tx;
         Integer newTrain = null;
@@ -82,9 +81,10 @@ public class TrainsDomain {
         Session session = null;
         try {
             session = sessionFactory.openSession();
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             Train train = (Train) session.get(Train.class, trainId);
             session.delete(train);
+            transaction.commit();
         }catch (HibernateException e){
             e.printStackTrace();
         }finally {

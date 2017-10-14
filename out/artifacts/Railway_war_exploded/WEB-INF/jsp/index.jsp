@@ -12,5 +12,6 @@
   </head>
   <body>
   <h1>ПрИвЕт, ЛоШаРа!</h1>
+  <a href="/routes">Таблицы</a>
   </body>
 </html>

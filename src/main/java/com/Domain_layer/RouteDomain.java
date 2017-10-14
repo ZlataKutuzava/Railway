@@ -16,15 +16,12 @@ public class RouteDomain {
 
     public Iterable<Route> GetRoutes(){
         Session session = null;
-        Iterable<Route> routeList = null;
+        List routeList = null;
         try {
             if (sessionFactory != null){
                 session = sessionFactory.openSession();
                 session.beginTransaction();
-                String hql = "from route";
-                Query query = session.createQuery(hql);
-                List<Route> listCategories = query.list();
-
+                routeList = session.createQuery("from Route").list();
             }
         }catch (HibernateException e){
             e.printStackTrace();
@@ -95,9 +92,10 @@ public class RouteDomain {
         Session session = null;
         try {
             session = sessionFactory.openSession();
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             Route route = (Route) session.get(Route.class, routeId);
             session.delete(route);
+            transaction.commit();
         }catch (HibernateException e){
             e.printStackTrace();
         }finally {

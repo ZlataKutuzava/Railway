@@ -16,8 +16,7 @@ public class StationDomain {
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-            Query query = session.createQuery("from Stations");
-            stationsList = query.list();
+            stationsList = session.createQuery("from Station ").list();
         }catch (HibernateException e){
             e.printStackTrace();
         }finally {
@@ -82,9 +81,10 @@ public class StationDomain {
         Session session = null;
         try {
             session = sessionFactory.openSession();
-            session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             Station station = (Station) session.get(Station.class, stationId);
             session.delete(station);
+            transaction.commit();
         }catch (HibernateException e){
             e.printStackTrace();
         }finally {
