@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
-    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+    @RequestMapping("/")
+    public ModelAndView GetIndex(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         return new ModelAndView("index.jsp");
     }
 }

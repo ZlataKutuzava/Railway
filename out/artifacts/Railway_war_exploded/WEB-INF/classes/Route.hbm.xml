@@ -5,7 +5,7 @@
 <hibernate-mapping>
    <class name="com.Database_layer.Route" table="route">
        <id name="routeId" type="java.lang.Integer">
-           <column name="name=id_route" />
+           <column name="id_route" />
            <generator class="identity" />
        </id>
        <property name="trainId" type="java.lang.Integer">
@@ -17,7 +17,7 @@
        <property name="timeArrival" type="java.lang.String">
            <column name="t_arr" length="50"/>
        </property>
-       <property name="timeDeparture">
+       <property name="timeDeparture" type="java.lang.String">
            <column name="t_der" length="20"/>
        </property>
    </class>

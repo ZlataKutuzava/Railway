@@ -11,5 +11,14 @@
       <user-name>root</user-name>
       <introspection-schemas>*:railway</introspection-schemas>
     </data-source>
+    <data-source name="com:Database_layer:resources:hibernate.cfg.xml/Hibernate" uuid="b2a6be74-f1a6-40c6-a3af-4016a82ddc80">
+      <database-info product="MySQL" version="5.7.19-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <user-name>root</user-name>
+      <introspection-schemas>*:railway</introspection-schemas>
+    </data-source>
   </component>
 </project>

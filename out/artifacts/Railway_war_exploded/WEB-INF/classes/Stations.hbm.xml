@@ -3,9 +3,9 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.Database_layer.Stations" table="stations">
+    <class name="com.Database_layer.Station" table="stations">
     <id name="stationId" type="java.lang.Integer">
-    <column name="name=id_station" />
+    <column name="id_station" />
     <generator class="identity" />
     </id>
         <property name="stationName" type="string">
